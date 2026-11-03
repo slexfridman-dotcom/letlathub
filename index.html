@@ -1583,4 +1583,10 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
 
 <script src="site.js?v=2"></script>
 </body>
+   <script>
+  if (sessionStorage.getItem('letlat-age-verified') === 'true') {
+    document.getElementById('ageGate').hidden = true;
+    document.getElementById('siteContent').classList.remove('age-gated');
+  }
+</script>
 </html>
