@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://letlathub.us.ci/sitemap.xml
