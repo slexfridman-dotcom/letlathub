@@ -1,3 +1,8 @@
+/* ============================================================
+   LETLAT HUB — site.js
+   Updated with search engine bot bypass for the age gate.
+   ============================================================ */
+
 const ageGate = document.querySelector('#ageGate');
 const siteContent = document.querySelector('#siteContent');
 const ageMessage = document.querySelector('#ageGateMessage');
@@ -9,29 +14,44 @@ function showSite() {
   if (siteContent) siteContent.hidden = false;
 }
 
+/* ------------------------------------------------------------
+   Search engine / social crawler detection.
+   Bots are allowed to see the full page so content can be
+   indexed. Human visitors still go through the age gate.
+   ------------------------------------------------------------ */
+const isSearchEngineBot = /Googlebot|Google-InspectionTool|Bingbot|Slurp|DuckDuckBot|YandexBot|Baiduspider|Applebot|facebookexternalhit|Twitterbot|LinkedInBot|AhrefsBot|SemrushBot/i.test(navigator.userAgent);
+
 if (ageGate && siteContent) {
-  try {
-    if (sessionStorage.getItem('letlat-age-verified') === 'true') showSite();
-  } catch (error) {
-    if (ageMessage) ageMessage.textContent = `Age confirmation could not be remembered for this session: ${error.message}`;
-  }
-
-  ageAcceptButton?.addEventListener('click', () => {
-    try {
-      sessionStorage.setItem('letlat-age-verified', 'true');
-    } catch (error) {
-      if (ageMessage) ageMessage.textContent = `Age confirmation could not be remembered: ${error.message}`;
-    }
+  if (isSearchEngineBot) {
+    // Crawlers bypass the gate so their rendered view contains real content.
     showSite();
-  });
+  } else {
+    try {
+      if (sessionStorage.getItem('letlat-age-verified') === 'true') showSite();
+    } catch (error) {
+      if (ageMessage) ageMessage.textContent = `Age confirmation could not be remembered for this session: ${error.message}`;
+    }
 
-  ageDeclineButton?.addEventListener('click', () => {
-    if (ageMessage) ageMessage.textContent = 'Access is limited to visitors who are 18 or older. Close this tab to leave.';
-    if (ageAcceptButton) ageAcceptButton.disabled = true;
-    ageDeclineButton.disabled = true;
-  });
+    ageAcceptButton?.addEventListener('click', () => {
+      try {
+        sessionStorage.setItem('letlat-age-verified', 'true');
+      } catch (error) {
+        if (ageMessage) ageMessage.textContent = `Age confirmation could not be remembered: ${error.message}`;
+      }
+      showSite();
+    });
+
+    ageDeclineButton?.addEventListener('click', () => {
+      if (ageMessage) ageMessage.textContent = 'Access is limited to visitors who are 18 or older. Close this tab to leave.';
+      if (ageAcceptButton) ageAcceptButton.disabled = true;
+      ageDeclineButton.disabled = true;
+    });
+  }
 }
 
+/* ============================================================
+   MOBILE NAVIGATION
+   ============================================================ */
 const menuButton = document.querySelector('.mobile-menu-btn');
 const menu = menuButton && document.getElementById(menuButton.getAttribute('aria-controls'));
 const mobileViewport = window.matchMedia('(max-width: 768px)');
@@ -78,6 +98,9 @@ if (menuButton && menu) {
   mobileViewport.addEventListener('change', () => setMenuOpen(false));
 }
 
+/* ============================================================
+   VIDEO CARD PREVIEWS
+   ============================================================ */
 const previewMotionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('.video-card video.card-preview-video').forEach((video) => {
   const card = video.closest('.video-card');
@@ -172,6 +195,9 @@ document.querySelectorAll('.video-card video.card-preview-video').forEach((video
   });
 });
 
+/* ============================================================
+   VIDEO REACTIONS & SHARING
+   ============================================================ */
 const reactionButtons = Array.from(document.querySelectorAll('[data-video-reaction]'));
 const actionMessage = document.querySelector('[data-video-action-message]');
 reactionButtons.forEach((button) => {
@@ -213,6 +239,9 @@ shareButton?.addEventListener('click', async () => {
   }
 });
 
+/* ============================================================
+   LOGIN FORM (placeholder — real auth not implemented)
+   ============================================================ */
 const loginForm = document.querySelector('[data-login-form]');
 const loginNotice = document.querySelector('[data-login-notice]');
 loginForm?.addEventListener('submit', (event) => {
@@ -220,6 +249,9 @@ loginForm?.addEventListener('submit', (event) => {
   if (loginNotice) loginNotice.textContent = 'Please subscribe first to get access.';
 });
 
+/* ============================================================
+   HERO CAROUSEL
+   ============================================================ */
 const heroCarousel = document.querySelector('[data-hero-carousel]');
 if (heroCarousel) {
   const slides = Array.from(heroCarousel.querySelectorAll('[data-carousel-slide]'));
@@ -292,6 +324,9 @@ if (heroCarousel) {
   }
 }
 
+/* ============================================================
+   SUPPORT CHAT WIDGET
+   ============================================================ */
 const supportChat = document.querySelector('[data-support-chat]');
 if (supportChat) {
   const toggle = supportChat.querySelector('[data-chat-toggle]');
@@ -380,6 +415,9 @@ if (supportChat) {
   });
 }
 
+/* ============================================================
+   PLAN SELECTION (payment page)
+   ============================================================ */
 const selectedPlanName = document.querySelector('#selectedPlanName');
 const selectedPlanPrice = document.querySelector('#selectedPlanPrice');
 const plans = {
@@ -397,6 +435,9 @@ if (selectedPlanName && selectedPlanPrice) {
   }
 }
 
+/* ============================================================
+   FOOTER YEAR
+   ============================================================ */
 document.querySelectorAll('[data-current-year]').forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
