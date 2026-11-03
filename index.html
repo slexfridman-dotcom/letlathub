@@ -1145,7 +1145,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
       Please confirm that you are 18 or older to enter this site.
     </p>
     <div class="age-gate-actions">
-      <button class="btn btn--solid" type="button" data-age-accept>I am 18 or older</button>
+      <button class="btn btn--solid" type="button" onclick="sessionStorage.setItem('letlat-age-verified', 'true'); document.getElementById('ageGate').hidden = true; document.getElementById('siteContent').classList.remove('age-gated');">I am 18 or older</button>
       <button class="btn btn--glass" type="button" data-age-decline>Exit</button>
     </div>
   </div>
