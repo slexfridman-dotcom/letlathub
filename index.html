@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ethiopian Sex Videos &amp; Habesha | ልጥላጥ hub</title>
-<meta name="description" content="Discover Ethiopian sex videos and Habesha adult videos at ልጥላጥ hub. Browse selected previews and subscribe for full video access. Adults 18+ only.">
+<meta name="description" content="Discover Ethiopian sex videos and Habesha adult videos at ልጥላጥ hub. Browse selected previews and subscribe for full video access. Adults 21+ only.">
 <meta name="robots" content="index, follow, noimageindex, max-image-preview:none">
 <meta name="rating" content="adult">
 <link rel="canonical" href="https://letlathub.us.ci/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://letlathub.us.ci/">
 <meta property="og:title" content="Ethiopian Sex Videos &amp; Habesha | ልጥላጥ hub">
-<meta property="og:description" content="Browse selected Ethiopian and Habesha collection previews. Subscribe for full video access. Adults 18+ only.">
+<meta property="og:description" content="Browse selected Ethiopian and Habesha collection previews. Subscribe for full video access. Adults 21+ only.">
 <meta property="og:locale" content="en_ET">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
@@ -23,7 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Sans+Ethiopic:wght@400;600;700;900&family=Cinzel:wght@600;800;900&display=swap" rel="stylesheet">
 
 <style>
-.site-shell.age-gated { display: none; }
 /* ============================================================
    DESIGN SYSTEM & LETLAT HUB BRAND PALETTE
    ============================================================ */
@@ -99,63 +98,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     radial-gradient(900px 680px at 55% 110%, rgba(245, 158, 11, 0.07), transparent 72%);
 }
 body > *:not(.bg-lights) { position: relative; z-index: 1; }
-
-/* ============================================================
-   AGE VERIFICATION MODAL OVERLAY
-   ============================================================ */
-.age-gate-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: rgba(4, 6, 10, 0.94);
-  backdrop-filter: blur(20px);
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.age-gate-modal[hidden] { display: none; }
-.age-gate-box {
-  position: relative;
-  background:
-    radial-gradient(ellipse at 50% 0, rgba(99, 102, 241, 0.17), transparent 70%),
-    var(--bg-surface);
-  border: 1px solid rgba(148, 163, 255, 0.3);
-  border-radius: var(--radius-xl);
-  padding: 38px clamp(22px, 5vw, 50px);
-  max-width: 480px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.7), 0 0 70px rgba(99, 102, 241, 0.13);
-}
-.age-brand-mark {
-  display: block;
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 20px;
-  object-fit: contain;
-}
-.age-badge {
-  display: inline-block;
-  background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: var(--accent-red);
-  font-weight: 900;
-  font-size: 1.1rem;
-  padding: 6px 16px;
-  border-radius: 999px;
-  margin-bottom: 20px;
-}
-.age-gate-actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-.age-gate-actions .btn {
-  width: auto !important;
-  min-width: 0;
-  flex: 1;
-}
-.age-gate-actions .btn:disabled { cursor: not-allowed; opacity: 0.55; }
 
 /* ============================================================
    BUTTONS & UI COMPONENTS
@@ -1111,9 +1053,6 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
   .page-link { min-width: 34px; height: 36px; padding-inline: 8px; font-size: 0.78rem; }
 }
 @media (max-width: 360px) {
-  .age-gate-box { padding: 28px 18px; }
-  .age-gate-actions { gap: 8px; }
-  .age-gate-actions .btn { padding-inline: 10px; font-size: 0.82rem; }
   .spotlight-card { padding-inline: 18px; }
   .card-details { padding-inline: 13px; }
   .stat-group { gap: 5px; }
@@ -1135,23 +1074,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
 <body>
 <div class="bg-lights" aria-hidden="true"></div>
 
-<!-- AGE VERIFICATION GATE -->
-<div class="age-gate-modal" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
-  <div class="age-gate-box">
-    <img class="age-brand-mark" src="assets/letlat-icon.png" alt="">
-    <span class="age-badge">18+ ONLY</span>
-    <h2 id="ageGateTitle" style="font-size: 1.8rem; font-weight: 800; margin-bottom: 12px;">Age verification</h2>
-    <p id="ageGateMessage" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 26px;" aria-live="polite">
-      Please confirm that you are 18 or older to enter this site.
-    </p>
-    <div class="age-gate-actions">
-      <button class="btn btn--solid" type="button" onclick="sessionStorage.setItem('letlat-age-verified', 'true'); document.getElementById('ageGate').hidden = true; document.getElementById('siteContent').classList.remove('age-gated');">I am 18 or older</button>
-      <button class="btn btn--glass" type="button" data-age-decline>Exit</button>
-    </div>
-  </div>
-</div>
-
-<div class="site-shell age-gated" id="siteContent">
+<div class="site-shell" id="siteContent">
 <!-- HEADER -->
 <header class="site-header">
   <div class="container header-inner">
@@ -1182,7 +1105,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
       <div class="spotlight-copy">
         <h1 class="spotlight-title am" lang="am">የሀበሻ የወሲብ ቪዲዮዎች እና እውነተኛ የኢትዮጵያ ፖርን</h1>
         <p class="spotlight-desc am" lang="am">
-          ከሀበሻ የይዘት ፈጣሪዎች የተዘጋጁ እውነተኛ የኢትዮጵያ የወሲብ ቪዲዮዎችንና ልዩ የጎልማሶች ይዘቶችን ያግኙ። ልጥላጥ hub ለ18+ ተመልካቾች የተዘጋጀ ፕሪሚየም መዳረሻዎ ነው።
+          ከሀበሻ የይዘት ፈጣሪዎች የተዘጋጁ እውነተኛ የኢትዮጵያ የወሲብ ቪዲዮዎችንና ልዩ የጎልማሶች ይዘቶችን ያግኙ። ልጥላጥ hub ለ21+ ተመልካቾች የተዘጋጀ ፕሪሚየም መዳረሻዎ ነው።
         </p>
         <section class="hero-audio-card" aria-labelledby="heroAudioTitle">
           <div class="hero-audio-heading">
@@ -1204,23 +1127,23 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
             <span class="hero-model-count">ACCESS 43+ MODELS</span>
             <div class="hero-carousel-slide is-active" data-carousel-slide aria-label="1 of 5" aria-roledescription="slide" aria-hidden="false">
               <img src="assets/collection-04.webp" alt="Featured image from the Letlat Hub collection" fetchpriority="high">
-              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>18+ COLLECTION</span></div>
+              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>21+ COLLECTION</span></div>
             </div>
             <div class="hero-carousel-slide" data-carousel-slide aria-label="2 of 5" aria-roledescription="slide" aria-hidden="true">
               <img src="assets/collection-05.webp" alt="Featured image from the Letlat Hub collection" loading="lazy">
-              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>18+ COLLECTION</span></div>
+              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>21+ COLLECTION</span></div>
             </div>
             <div class="hero-carousel-slide" data-carousel-slide aria-label="3 of 5" aria-roledescription="slide" aria-hidden="true">
               <img src="assets/collection-01.webp" alt="Featured image from the Letlat Hub collection" loading="lazy">
-              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>18+ COLLECTION</span></div>
+              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>21+ COLLECTION</span></div>
             </div>
             <div class="hero-carousel-slide" data-carousel-slide aria-label="4 of 5" aria-roledescription="slide" aria-hidden="true">
               <img src="assets/collection-02.webp" alt="Featured image from the Letlat Hub collection" loading="lazy">
-              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>18+ COLLECTION</span></div>
+              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>21+ COLLECTION</span></div>
             </div>
             <div class="hero-carousel-slide" data-carousel-slide aria-label="5 of 5" aria-roledescription="slide" aria-hidden="true">
               <img src="assets/collection-03.webp" alt="Featured image from the Letlat Hub collection" loading="lazy">
-              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>18+ COLLECTION</span></div>
+              <div class="hero-carousel-label"><span>LETLAT HUB</span><span>21+ COLLECTION</span></div>
             </div>
           </div>
           <div class="hero-carousel-footer">
@@ -1280,7 +1203,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
       </div>
       <div class="video-information">
         <h2 class="am" lang="am">ሜላትን የባሏ ጓደኛ አስፈንድዶ ሲለጠልጣት</h2>
-        <p>Habesha collection · 18+</p>
+        <p>Habesha collection · 21+</p>
       </div>
       <div class="video-action-row" role="group" aria-label="Video reactions">
         <button class="video-action" type="button" data-video-reaction="like" aria-pressed="false">
@@ -1358,7 +1281,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
     <aside class="related-panel" aria-labelledby="relatedHeading">
       <div class="related-heading">
         <h2 id="relatedHeading">Related videos</h2>
-        <span>18+ collection</span>
+        <span>21+ collection</span>
       </div>
       <div class="related-list">
         <a class="related-video" href="plans.html">
@@ -1387,7 +1310,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
       <div>
         <span class="catalog-kicker">Explore the collection</span>
         <h2 class="catalog-title">Made for your next watch</h2>
-        <p class="catalog-description">Discover Ethiopian sex and Habesha adult videos. Preview selected clips and subscribe for full video access. For adults 18+ only.</p>
+        <p class="catalog-description">Discover Ethiopian sex and Habesha adult videos. Preview selected clips and subscribe for full video access. For adults 21+ only.</p>
       </div>
       <span class="catalog-count">06 VIDEOS</span>
     </div>
@@ -1407,7 +1330,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
           <div class="card-details">
           <span class="card-title am" lang="am">ሜላትን የባሏ ጓደኛ አስፈንድዶ ሲለጠልጣት</span>
           <span class="subscribe-note">Subscribe for full video</span>
-          <div class="card-stats"><span>Curated Ethiopian &amp; Habesha collection</span><span>18+</span></div>
+          <div class="card-stats"><span>Curated Ethiopian &amp; Habesha collection</span><span>21+</span></div>
           </div>
         </a>
         <button class="preview-audio-button" type="button" data-preview-audio aria-label="Unmute video preview" aria-pressed="false">
@@ -1432,7 +1355,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
         <div class="card-details">
           <span class="card-title am" lang="am">ሜላትን የባሏ ጓደኛ አስፈንድዶ ሲለጠልጣት</span>
           <span class="subscribe-note">Subscribe for full video</span>
-          <div class="card-stats"><span>Members-only preview</span><span>18+</span></div>
+          <div class="card-stats"><span>Members-only preview</span><span>21+</span></div>
         </div>
       </a>
 
@@ -1447,7 +1370,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
         <div class="card-details">
           <span class="card-title am" lang="am">ቤቲን የፍንድድ ሲሸጉራት</span>
           <span class="subscribe-note">Subscribe for full video</span>
-          <div class="card-stats"><span>Members-only collection</span><span>18+</span></div>
+          <div class="card-stats"><span>Members-only collection</span><span>21+</span></div>
         </div>
       </a>
 
@@ -1462,7 +1385,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
         <div class="card-details">
           <span class="card-title am" lang="am">ሄለን እና ጓደኛዋን ቁላውን እያስጠባ ለብቻው በዳቸው</span>
           <span class="subscribe-note">Subscribe for full video</span>
-          <div class="card-stats"><span>Members-only collection</span><span>18+</span></div>
+          <div class="card-stats"><span>Members-only collection</span><span>21+</span></div>
         </div>
       </a>
 
@@ -1481,7 +1404,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
           <div class="card-details">
           <span class="card-title am" lang="am">የሀበሻ ተማሪዎች</span>
           <span class="subscribe-note">Subscribe for full video</span>
-          <div class="card-stats"><span>Curated Ethiopian &amp; Habesha collection</span><span>18+</span></div>
+          <div class="card-stats"><span>Curated Ethiopian &amp; Habesha collection</span><span>21+</span></div>
           </div>
         </a>
         <button class="preview-audio-button" type="button" data-preview-audio aria-label="Unmute video preview" aria-pressed="false">
@@ -1510,7 +1433,7 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
           <div class="card-details">
             <span class="card-title am" lang="am">እርጥብ እምስ ሲበዳ</span>
             <span class="subscribe-note">Subscribe for full video</span>
-            <div class="card-stats"><span>Members-only collection</span><span>18+</span></div>
+            <div class="card-stats"><span>Members-only collection</span><span>21+</span></div>
           </div>
         </a>
         <button class="preview-audio-button" type="button" data-preview-audio aria-label="Unmute video preview" aria-pressed="false">
@@ -1576,17 +1499,11 @@ body > *:not(.bg-lights) { position: relative; z-index: 1; }
       <a href="plans.html">Subscriptions</a>
       <a href="login.html">Member access</a>
     </nav>
-    <span class="footer-copy">&copy; <span id="year" data-current-year></span> ልጥላጥ hub. 18+ viewers only.</span>
+    <span class="footer-copy">&copy; <span id="year" data-current-year></span> ልጥላጥ hub. 21+ viewers only.</span>
   </div>
 </footer>
 </div>
 
-<script src="site.js?v=2"></script>
+<script src="site.js"></script>
 </body>
-   <script>
-  if (sessionStorage.getItem('letlat-age-verified') === 'true') {
-    document.getElementById('ageGate').hidden = true;
-    document.getElementById('siteContent').classList.remove('age-gated');
-  }
-</script>
 </html>
